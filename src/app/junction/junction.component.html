@@ -1,0 +1,28 @@
+  <div class="traffic-grid">
+    <div class="light white"></div>
+    <div class="light" [class.red]="isRed('top')" 
+                      [class.green]="currentLight === 'green-top'"
+                      [class.yellow]="currentLight === 'yellow-top'"></div>
+    <div class="light white"></div>
+  
+    <div class="light" [class.red]="isRed('left')"
+                      [class.green]="currentLight === 'green-left'"
+                      [class.yellow]="currentLight === 'yellow-left'"></div>
+    <div class="light white"></div>
+    <div class="light" [class.red]="isRed('right')"
+                      [class.green]="currentLight === 'green-right'"
+                      [class.yellow]="currentLight === 'yellow-right'"></div>
+  
+    <div class="light white"></div>
+    <div class="light" [class.red]="isRed('bottom')"
+                      [class.green]="currentLight === 'green-bottom'"
+                      [class.yellow]="currentLight === 'yellow-bottom'"></div>
+    <div class="light white"></div>
+  </div>
+  <div class="controls">
+    <label for="greenDuration">Green Light Duration (seconds):</label>
+    <input id="greenDuration" type="number" [(ngModel)]="greenDuration" min="1">
+    <button (click)="onDurationChange()">Update</button>
+  </div>
+
+  
